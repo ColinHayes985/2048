@@ -13,7 +13,8 @@ public class Game {
         while (win==false) {
             char direction = s.next().charAt(0);
             move(direction, grid);
-            combine('w',grid);
+            //Took combine out of move because move is used again but tiles aren't combined again
+            combine(direction,grid);
             move(direction,grid);
             placeTile(grid);
             print(grid);
@@ -64,14 +65,37 @@ public class Game {
             }
 
         }
+        else if(direction=='a'||direction=='A'){
+            while (k>0){
+                for (int i = 0; i<array.length; i++){
+                    for (int j=1; j<array[i].length; j++){
+                        if(array[i][j]!=0&&array[i][j-1]==0){
+                            array[i][j-1]=array[i][j];
+                            array[i][j]=0;
+                        }
+                    }
+                }
+                k--;
+            }
+        }
     }
     public static void combine(char direction, int[][]array){
-        if (direction=='w'){
+        if (direction=='w'||direction=='W'){
             for(int i=0; i<3; i++){
                 for(int j=0; j<array[i].length; j++){
                     if (array[i][j]==array[i+1][j]){
                         array[i][j]*=2;
                         array[i+1][j]=0;
+                    }
+                }
+            }
+        }
+        else if (direction=='a'||direction=='A'){
+            for(int j=0; j<3; j++){
+                for(int i=0; i<array.length; i++){
+                        if (array[i][j]==array[i][j+1]){
+                        array[i][j]*=2;
+                        array[i][j+1]=0;
                     }
                 }
             }
