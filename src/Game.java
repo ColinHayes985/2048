@@ -13,10 +13,17 @@ public class Game {
         while (win==false) {
             char direction = s.next().charAt(0);
             move(direction, grid);
+            //System.out.println("Move:\n");//For Debugging
+            //print(grid);//For Debugging
             //Took combine out of move because move is used again but tiles aren't combined again
             combine(direction,grid);
+            //System.out.println("Combine:\n");//For Debugging
+            //print(grid);//For Debugging
             move(direction,grid);
+            //System.out.println("Move:\n");//For Debugging
+            //print(grid);//For Debugging
             placeTile(grid);
+            //System.out.println("Place:\n");//For Debugging
             print(grid);
         }
 
@@ -47,14 +54,12 @@ public class Game {
         }
 
     }
-    public static void move(char direction, int[][] array){
-        int k=3;
-        if (direction=='w'||direction=='W') {
+    public static void move(char direction, int[][] array) {
+        int k = 3;
+        if (direction == 'w' || direction == 'W') {
             while (k > 0) {
                 for (int i = 1; i < array.length; i++) {
                     for (int j = 0; j < array[i].length; j++) {
-                        //int k=i;
-                        //while(k>0) {
                         if (array[i][j] != 0 && array[i - 1][j] == 0) {
                             array[i - 1][j] = array[i][j];
                             array[i][j] = 0;
@@ -63,15 +68,37 @@ public class Game {
                 }
                 k--;
             }
-
-        }
-        else if(direction=='a'||direction=='A'){
-            while (k>0){
-                for (int i = 0; i<array.length; i++){
-                    for (int j=1; j<array[i].length; j++){
-                        if(array[i][j]!=0&&array[i][j-1]==0){
-                            array[i][j-1]=array[i][j];
-                            array[i][j]=0;
+        } else if (direction == 'a' || direction == 'A') {
+            while (k > 0) {
+                for (int i = 0; i < array.length; i++) {
+                    for (int j = 1; j < array[i].length; j++) {
+                        if (array[i][j] != 0 && array[i][j - 1] == 0) {
+                            array[i][j - 1] = array[i][j];
+                            array[i][j] = 0;
+                        }
+                    }
+                }
+                k--;
+            }
+        } else if (direction=='s'||direction=='S') {
+            while (k > 0) {
+                for (int i = 2; i >= 0; i--) {
+                    for (int j = 0; j < array[i].length; j++) {
+                        if (array[i][j] != 0 && array[i + 1][j] == 0) {
+                            array[i + 1][j] = array[i][j];
+                            array[i][j] = 0;
+                        }
+                    }
+                }
+                k--;
+            }
+        } else if (direction == 'd'||direction=='D') {
+            while (k > 0) {
+                for (int i = 0; i < array.length; i++) {
+                    for (int j = 2; j >= 0; j--) {
+                        if (array[i][j] != 0 && array[i][j + 1] == 0) {
+                            array[i][j + 1] = array[i][j];
+                            array[i][j] = 0;
                         }
                     }
                 }
@@ -79,6 +106,7 @@ public class Game {
             }
         }
     }
+
     public static void combine(char direction, int[][]array){
         if (direction=='w'||direction=='W'){
             for(int i=0; i<3; i++){
@@ -100,7 +128,28 @@ public class Game {
                 }
             }
         }
-
+        //TODO: Out of bounds exception?????
+        else if (direction=='s'||direction=='S'){
+            for(int i=3; i>1; i--){
+                for(int j=0; j<array[i].length; j++){
+                    if (array[i][j]==array[i-1][j]){
+                        array[i][j]*=2;
+                        array[i-1][j]=0;
+                        //print(array);//For Debugging
+                    }
+                }
+            }
+        }
+        else if (direction=='d'||direction=='D'){
+            for(int j=3; j>1; j--){
+                for(int i=0; i<array.length; i++){
+                    if (array[i][j]==array[i][j-1]){
+                        array[i][j]*=2;
+                        array[i][j-1]=0;
+                    }
+                }
+            }
+        }
     }
 }
 
