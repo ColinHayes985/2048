@@ -10,6 +10,10 @@ public class Game {
         placeTile(grid);
         print(grid);
         Scanner s = new Scanner(System.in);
+        //TODO:Win Condition:2048
+        //TODO:Lose Condition:Board filled AND No more moves
+        //TODO:Add error handling so if nothing moves(ex:move right when all tiles are in right-most position) no tile is added
+        //TODO:Turn it into a GUI?????????
         while (win==false) {
             char direction = s.next().charAt(0);
             move(direction, grid);
@@ -128,7 +132,6 @@ public class Game {
                 }
             }
         }
-        //TODO: Out of bounds exception?????
         else if (direction=='s'||direction=='S'){
             for(int i=3; i>1; i--){
                 for(int j=0; j<array[i].length; j++){
