@@ -7,6 +7,8 @@ public class Game {
         placeTile(grid);
         placeTile(grid);
         print(grid);
+        move(grid);
+        print(grid);
 
     }
     public static void print(int[][] array) {
@@ -34,6 +36,26 @@ public class Game {
             array[i][j]=2;
         }
 
+    }
+    public static void move(int[][] array){
+        Scanner s = new Scanner(System.in);
+        String direction = s.next();
+        int k=3;
+        if (direction.equalsIgnoreCase("w")) {
+            while (k > 0) {
+                for (int i = 1; i < array.length; i++) {
+                    for (int j = 0; j < array[i].length; j++) {
+                        //int k=i;
+                        //while(k>0) {
+                        if (array[i][j] != 0 && array[i - 1][j] == 0) {
+                            array[i - 1][j] = array[i][j];
+                            array[i][j] = 0;
+                        }
+                    }
+                }
+                k--;
+            }
+        }
     }
 }
 
