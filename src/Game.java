@@ -11,6 +11,7 @@ public class Game {
     }
     public static void print(int[][] array) {
         for (int i = 0; i < 4; i++) {
+            System.out.println("");
             for (int j = 0; j < 4; j++) {
                 System.out.format("%04d ", array[i][j]);
             }
