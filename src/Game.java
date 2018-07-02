@@ -2,13 +2,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
+    static boolean win=false;
+    static boolean lose=false;
     public static void main(String[] args){
         int [][] grid = new int[4][4];
         placeTile(grid);
         placeTile(grid);
         print(grid);
-        move(grid);
-        print(grid);
+        Scanner s = new Scanner(System.in);
+        while (win==false) {
+            char direction = s.next().charAt(0);
+            move(direction, grid);
+            combine('w',grid);
+            move(direction,grid);
+            placeTile(grid);
+            print(grid);
+        }
 
     }
     public static void print(int[][] array) {
@@ -28,7 +37,7 @@ public class Game {
             i = rand.nextInt(4);
             j = rand.nextInt(4);
         }
-        int num = rand.nextInt(5);
+        int num = rand.nextInt(10);
         if (num == 0) {
             array[i][j]=4;
         }
@@ -37,11 +46,9 @@ public class Game {
         }
 
     }
-    public static void move(int[][] array){
-        Scanner s = new Scanner(System.in);
-        String direction = s.next();
+    public static void move(char direction, int[][] array){
         int k=3;
-        if (direction.equalsIgnoreCase("w")) {
+        if (direction=='w'||direction=='W') {
             while (k > 0) {
                 for (int i = 1; i < array.length; i++) {
                     for (int j = 0; j < array[i].length; j++) {
@@ -55,7 +62,21 @@ public class Game {
                 }
                 k--;
             }
+
         }
+    }
+    public static void combine(char direction, int[][]array){
+        if (direction=='w'){
+            for(int i=0; i<3; i++){
+                for(int j=0; j<array[i].length; j++){
+                    if (array[i][j]==array[i+1][j]){
+                        array[i][j]*=2;
+                        array[i+1][j]=0;
+                    }
+                }
+            }
+        }
+
     }
 }
 
