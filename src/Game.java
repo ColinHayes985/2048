@@ -133,7 +133,7 @@ public class Game {
             }
         }
         else if (direction=='s'||direction=='S'){
-            for(int i=3; i>1; i--){
+            for(int i=3; i>0; i--){
                 for(int j=0; j<array[i].length; j++){
                     if (array[i][j]==array[i-1][j]){
                         array[i][j]*=2;
@@ -144,7 +144,7 @@ public class Game {
             }
         }
         else if (direction=='d'||direction=='D'){
-            for(int j=3; j>1; j--){
+            for(int j=3; j>0; j--){
                 for(int i=0; i<array.length; i++){
                     if (array[i][j]==array[i][j-1]){
                         array[i][j]*=2;
