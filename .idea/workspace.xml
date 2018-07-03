@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b9fd948-7491-4696-a738-b3c19315bfd1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" afterPath="$PROJECT_DIR$/src/Game.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,16 +17,20 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+            <state relative-caret-position="680">
+              <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#750#797#0" expanded="false" />
-                <element signature="e#987#1037#0" expanded="false" />
-                <element signature="e#1126#1173#0" expanded="false" />
+                <element signature="e#938#985#0" expanded="false" />
+                <element signature="e#1175#1225#0" expanded="false" />
+                <element signature="e#1314#1361#0" expanded="false" />
+                <element signature="method#print#0;class#Game#0" expanded="false" />
+                <element signature="method#placeTile#0;class#Game#0" expanded="false" />
                 <element signature="method#move#0;class#Game#0" expanded="false" />
                 <element signature="method#combine#0;class#Game#0" expanded="false" />
                 <element signature="method#checkWin#0;class#Game#0" expanded="false" />
+                <element signature="method#checkLose#0;class#Game#0" expanded="false" />
+                <element signature="method#potentialMoves#0;class#Game#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -64,8 +67,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1078" />
-    <option name="y" value="-23" />
+    <option name="x" value="-14" />
     <option name="width" value="1628" />
     <option name="height" value="1714" />
   </component>
@@ -245,12 +247,12 @@
       <workItem from="1530553113822" duration="6709000" />
       <workItem from="1530628158432" duration="446000" />
       <workItem from="1530647284864" duration="414000" />
-      <workItem from="1530655256308" duration="276000" />
+      <workItem from="1530655256308" duration="2098000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12068000" />
+    <option name="totallyTimeSpent" value="13890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -265,7 +267,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16941015" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -304,12 +306,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#750#797#0" expanded="false" />
-            <element signature="e#987#1037#0" expanded="false" />
-            <element signature="e#1126#1173#0" expanded="false" />
+            <element signature="e#938#985#0" expanded="false" />
+            <element signature="e#1175#1225#0" expanded="false" />
+            <element signature="e#1314#1361#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
+            <element signature="method#checkLose#0;class#Game#0" expanded="false" />
+            <element signature="method#potentialMoves#0;class#Game#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -320,12 +326,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#750#797#0" expanded="false" />
-            <element signature="e#987#1037#0" expanded="false" />
-            <element signature="e#1126#1173#0" expanded="false" />
+            <element signature="e#938#985#0" expanded="false" />
+            <element signature="e#1175#1225#0" expanded="false" />
+            <element signature="e#1314#1361#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
+            <element signature="method#checkLose#0;class#Game#0" expanded="false" />
+            <element signature="method#potentialMoves#0;class#Game#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -336,12 +346,16 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#750#797#0" expanded="false" />
-            <element signature="e#987#1037#0" expanded="false" />
-            <element signature="e#1126#1173#0" expanded="false" />
+            <element signature="e#938#985#0" expanded="false" />
+            <element signature="e#1175#1225#0" expanded="false" />
+            <element signature="e#1314#1361#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
+            <element signature="method#checkLose#0;class#Game#0" expanded="false" />
+            <element signature="method#potentialMoves#0;class#Game#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -352,28 +366,36 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#750#797#0" expanded="false" />
-            <element signature="e#987#1037#0" expanded="false" />
-            <element signature="e#1126#1173#0" expanded="false" />
+            <element signature="e#938#985#0" expanded="false" />
+            <element signature="e#1175#1225#0" expanded="false" />
+            <element signature="e#1314#1361#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
+            <element signature="method#checkLose#0;class#Game#0" expanded="false" />
+            <element signature="method#potentialMoves#0;class#Game#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+        <state relative-caret-position="680">
+          <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#750#797#0" expanded="false" />
-            <element signature="e#987#1037#0" expanded="false" />
-            <element signature="e#1126#1173#0" expanded="false" />
+            <element signature="e#938#985#0" expanded="false" />
+            <element signature="e#1175#1225#0" expanded="false" />
+            <element signature="e#1314#1361#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
+            <element signature="method#checkLose#0;class#Game#0" expanded="false" />
+            <element signature="method#potentialMoves#0;class#Game#0" expanded="false" />
           </folding>
         </state>
       </provider>

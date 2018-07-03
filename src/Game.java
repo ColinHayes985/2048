@@ -5,16 +5,19 @@ public class Game {
     static boolean win=false;
     static boolean lose=false;
     static int score=0;
+    //static int[][]oldGrid;
     public static void main(String[] args){
         int [][] grid = new int[4][4];
         placeTile(grid);
         placeTile(grid);
         Scanner s = new Scanner(System.in);
-        //TODO:Win Condition:2048
-        //TODO:Lose Condition:Board filled AND No more moves
+        //int [][]test={{1,2,3,4},{5,6,7,4},{9,10,11,12},{13,14,15,16}};//Testing purposes
+        //checkLose(test);//Testing purposes
+        //TODO:Win Condition:2048-DONE
+        //TODO:Lose Condition:Board filled AND No more moves-DONE
         //TODO:Add error handling so if nothing moves(ex:move right when all tiles are in right-most position) no tile is added
         //TODO:Turn it into a GUI?????????
-        while (win==false) {
+        while (win==false&&lose==false) {
             print(grid);
             char direction = s.next().charAt(0);
             move(direction, grid);
@@ -30,9 +33,12 @@ public class Game {
             placeTile(grid);
             //System.out.println("Place:\n");//For Debugging
             checkWin(grid);
+            checkLose(grid);
         }
 
     }
+
+    //Prints the array for the user to see
     public static void print(int[][] array) {
         for (int i = 0; i < 4; i++) {
             System.out.println("");
@@ -43,6 +49,8 @@ public class Game {
         }
         System.out.println("Score:"+score);
     }
+
+    //Places a 2 or 4 in a randomly selected empty spot in the array
     public static void placeTile(int[][] array) {
         Random rand = new Random();
         int i = rand.nextInt(4);
@@ -60,6 +68,8 @@ public class Game {
         }
 
     }
+    
+    //Shifts array elements in desired direction
     public static void move(char direction, int[][] array) {
         int k = 3;
         if (direction == 'w' || direction == 'W') {
@@ -113,6 +123,7 @@ public class Game {
         }
     }
 
+    //Loops through array to combined like elements next to each other in direction input
     public static void combine(char direction, int[][]array){
         if (direction=='w'||direction=='W'){
             for(int i=0; i<3; i++){
@@ -161,14 +172,53 @@ public class Game {
         }
     }
 
+    //Loops through array to check for a 2048
     public static void checkWin(int[][]array){
         for (int i=0; i<array.length; i++){
             for (int j=0; j<array[i].length; j++){
                 if (array[i][j]==2048){
                     win=true;
+                    System.out.println("Congratulations! You won with a score of "+score);
                 }
             }
         }
+    }
+
+    //Loops through array to see if the board is full-If board is full, it calls potentialMoves
+    public static void checkLose(int[][]array){
+        int emptySpaces=0;
+        for(int i=0;i<array.length;i++){
+            for(int j=0;j<array[i].length;j++){
+                if(array[i][j]==0){
+                    emptySpaces++;
+                }
+            }
+        }
+        if (emptySpaces==0){
+            if(potentialMoves(array)==false){
+                lose=true;
+                System.out.println("You Lost\nScore: "+score);
+            }
+        }
+    }
+
+    //Loops through array(when full) to see if there are any moves that can be made
+    public static boolean potentialMoves(int[][]array){
+        for(int i=0;i<array.length;i++){
+            for(int j=0;j<array[i].length;j++) {
+                if (i>0){
+                    if (array[i][j]==array[i-1][j]){
+                        return true;
+                    }
+                }
+                if (j>0){
+                    if (array[i][j]==array[i][j-1]){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }
 
