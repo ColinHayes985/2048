@@ -8,13 +8,13 @@ public class Game {
         int [][] grid = new int[4][4];
         placeTile(grid);
         placeTile(grid);
-        print(grid);
         Scanner s = new Scanner(System.in);
         //TODO:Win Condition:2048
         //TODO:Lose Condition:Board filled AND No more moves
         //TODO:Add error handling so if nothing moves(ex:move right when all tiles are in right-most position) no tile is added
         //TODO:Turn it into a GUI?????????
         while (win==false) {
+            print(grid);
             char direction = s.next().charAt(0);
             move(direction, grid);
             //System.out.println("Move:\n");//For Debugging
@@ -28,7 +28,7 @@ public class Game {
             //print(grid);//For Debugging
             placeTile(grid);
             //System.out.println("Place:\n");//For Debugging
-            print(grid);
+            checkWin(grid);
         }
 
     }
@@ -150,6 +150,15 @@ public class Game {
                         array[i][j]*=2;
                         array[i][j-1]=0;
                     }
+                }
+            }
+        }
+    }
+    public static void checkWin(int[][]array){
+        for (int i=0; i<array.length; i++){
+            for (int j=0; j<array[i].length; j++){
+                if (array[i][j]==2048){
+                    win=true;
                 }
             }
         }
