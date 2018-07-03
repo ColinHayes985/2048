@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Game {
     static boolean win=false;
     static boolean lose=false;
+    static int score=0;
     public static void main(String[] args){
         int [][] grid = new int[4][4];
         placeTile(grid);
@@ -40,6 +41,7 @@ public class Game {
             }
             System.out.println("");
         }
+        System.out.println("Score:"+score);
     }
     public static void placeTile(int[][] array) {
         Random rand = new Random();
@@ -118,6 +120,7 @@ public class Game {
                     if (array[i][j]==array[i+1][j]){
                         array[i][j]*=2;
                         array[i+1][j]=0;
+                        score+=array[i][j];
                     }
                 }
             }
@@ -128,6 +131,7 @@ public class Game {
                         if (array[i][j]==array[i][j+1]){
                         array[i][j]*=2;
                         array[i][j+1]=0;
+                        score+=array[i][j];
                     }
                 }
             }
@@ -138,6 +142,7 @@ public class Game {
                     if (array[i][j]==array[i-1][j]){
                         array[i][j]*=2;
                         array[i-1][j]=0;
+                        score+=array[i][j];
                         //print(array);//For Debugging
                     }
                 }
@@ -149,11 +154,13 @@ public class Game {
                     if (array[i][j]==array[i][j-1]){
                         array[i][j]*=2;
                         array[i][j-1]=0;
+                        score+=array[i][j];
                     }
                 }
             }
         }
     }
+
     public static void checkWin(int[][]array){
         for (int i=0; i<array.length; i++){
             for (int j=0; j<array[i].length; j++){
