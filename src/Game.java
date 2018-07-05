@@ -5,7 +5,8 @@ public class Game {
     static boolean win=false;
     static boolean lose=false;
     static int score=0;
-    //static int[][]oldGrid;
+    static int[][] oldGrid=new int[4][4];
+    //Runs the game
     public static void main(String[] args){
         int [][] grid = new int[4][4];
         placeTile(grid);
@@ -19,6 +20,7 @@ public class Game {
         //TODO:Turn it into a GUI?????????
         while (win==false&&lose==false) {
             print(grid);
+            setOldGrid(grid);
             char direction = s.next().charAt(0);
             move(direction, grid);
             //System.out.println("Move:\n");//For Debugging
@@ -30,7 +32,9 @@ public class Game {
             move(direction,grid);
             //System.out.println("Move:\n");//For Debugging
             //print(grid);//For Debugging
-            placeTile(grid);
+            if (checkMove(grid)==true) {
+                placeTile(grid);
+            }
             //System.out.println("Place:\n");//For Debugging
             checkWin(grid);
             checkLose(grid);
@@ -68,7 +72,7 @@ public class Game {
         }
 
     }
-    
+
     //Shifts array elements in desired direction
     public static void move(char direction, int[][] array) {
         int k = 3;
@@ -219,6 +223,29 @@ public class Game {
             }
         }
         return false;
+    }
+
+    //Loops through array to make sure a valid(grid has changed as a result the move) move has been made before placing tile.
+    public static boolean checkMove(int[][] array){
+        int similarSpots=0;
+        for (int i=0; i<array.length;i++){
+            for(int j=0; j<array.length;j++){
+                if (oldGrid[i][j]==array[i][j]){
+                    similarSpots++;
+                }
+            }
+        }
+        if(similarSpots==16){
+                    return false;
+        }
+        return true;
+    }
+    public static void setOldGrid(int[][] array) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                oldGrid[i][j] = array[i][j];
+            }
+        }
     }
 }
 
