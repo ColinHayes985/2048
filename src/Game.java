@@ -5,6 +5,7 @@ public class Game {
     static boolean win=false;
     static boolean lose=false;
     static int score=0;
+    static int turns=0;
     static int[][] oldGrid=new int[4][4];
     //Runs the game
     public static void main(String[] args){
@@ -38,12 +39,13 @@ public class Game {
             //System.out.println("Place:\n");//For Debugging
             checkWin(grid);
             checkLose(grid);
+            turns++;
         }
 
     }
 
     //Prints the array for the user to see
-    public static void print(int[][] array) {
+    private static void print(int[][] array) {
         for (int i = 0; i < 4; i++) {
             System.out.println("");
             for (int j = 0; j < 4; j++) {
@@ -55,7 +57,7 @@ public class Game {
     }
 
     //Places a 2 or 4 in a randomly selected empty spot in the array
-    public static void placeTile(int[][] array) {
+    private static void placeTile(int[][] array) {
         Random rand = new Random();
         int i = rand.nextInt(4);
         int j = rand.nextInt(4);
@@ -74,7 +76,7 @@ public class Game {
     }
 
     //Shifts array elements in desired direction
-    public static void move(char direction, int[][] array) {
+    private static void move(char direction, int[][] array) {
         int k = 3;
         if (direction == 'w' || direction == 'W') {
             while (k > 0) {
@@ -128,7 +130,7 @@ public class Game {
     }
 
     //Loops through array to combined like elements next to each other in direction input
-    public static void combine(char direction, int[][]array){
+    private static void combine(char direction, int[][]array){
         if (direction=='w'||direction=='W'){
             for(int i=0; i<3; i++){
                 for(int j=0; j<array[i].length; j++){
@@ -177,19 +179,19 @@ public class Game {
     }
 
     //Loops through array to check for a 2048
-    public static void checkWin(int[][]array){
+    private static void checkWin(int[][]array){
         for (int i=0; i<array.length; i++){
             for (int j=0; j<array[i].length; j++){
                 if (array[i][j]==2048){
                     win=true;
-                    System.out.println("Congratulations! You won with a score of "+score);
+                    System.out.println("Congratulations! You won with a score of "+score+" in "+turns+" turns!");
                 }
             }
         }
     }
 
     //Loops through array to see if the board is full-If board is full, it calls potentialMoves
-    public static void checkLose(int[][]array){
+    private static void checkLose(int[][]array){
         int emptySpaces=0;
         for(int i=0;i<array.length;i++){
             for(int j=0;j<array[i].length;j++){
@@ -207,7 +209,7 @@ public class Game {
     }
 
     //Loops through array(when full) to see if there are any moves that can be made
-    public static boolean potentialMoves(int[][]array){
+    private static boolean potentialMoves(int[][]array){
         for(int i=0;i<array.length;i++){
             for(int j=0;j<array[i].length;j++) {
                 if (i>0){
@@ -226,7 +228,7 @@ public class Game {
     }
 
     //Loops through array to make sure a valid(grid has changed as a result the move) move has been made before placing tile.
-    public static boolean checkMove(int[][] array){
+    private static boolean checkMove(int[][] array){
         int similarSpots=0;
         for (int i=0; i<array.length;i++){
             for(int j=0; j<array.length;j++){
@@ -240,7 +242,9 @@ public class Game {
         }
         return true;
     }
-    public static void setOldGrid(int[][] array) {
+
+    //Sets the oldGrid array equal to the current array so it can be compared next turn to ensure a valid move is made
+    private static void setOldGrid(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 oldGrid[i][j] = array[i][j];
