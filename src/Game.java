@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class Game {
     static boolean win=false;
@@ -34,13 +35,18 @@ public class Game {
 
     //Prints the array for the user to see
     private static void print(int[][] array) {
+        String printableBoard="";
         for (int i = 0; i < 4; i++) {
             System.out.println("");
+            printableBoard+='\n';
+            printableBoard+='\n';
             for (int j = 0; j < 4; j++) {
                 System.out.format("%04d ", array[i][j]);
+                printableBoard+=String.format("%04d  ", array[i][j]);
             }
             System.out.println("");
         }
+        JOptionPane.showMessageDialog(null, printableBoard+"\nScore:"+score);
         System.out.println("Score:" + score);
     }
 
