@@ -46,7 +46,9 @@ public class Game {
             }
             System.out.println("");
         }
-        JOptionPane.showMessageDialog(null, printableBoard+"\nScore:"+score);
+        printableBoard+="\nScore:"+score;
+        String[] options={"UP", "DOWN", "LEFT", "RIGHT"};
+        int dir = JOptionPane.showOptionDialog(null, printableBoard, "2048",0,0,null,options, null);
         System.out.println("Score:" + score);
     }
 
