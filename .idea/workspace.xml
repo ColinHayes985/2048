@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b9fd948-7491-4696-a738-b3c19315bfd1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/2048/Game.class" afterPath="$PROJECT_DIR$/out/production/2048/Game.class" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" afterPath="$PROJECT_DIR$/src/Game.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,11 +17,13 @@
       <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+            <state relative-caret-position="560">
+              <caret line="75" column="69" lean-forward="false" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Game#0" expanded="false" />
+                <element signature="method#print#0;class#Game#0" expanded="false" />
+                <element signature="method#placeTile#0;class#Game#0" expanded="false" />
                 <element signature="method#move#0;class#Game#0" expanded="false" />
                 <element signature="method#combine#0;class#Game#0" expanded="false" />
                 <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -72,7 +72,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-14" />
     <option name="width" value="1628" />
     <option name="height" value="1714" />
@@ -257,15 +257,16 @@
       <workItem from="1530796338788" duration="4848000" />
       <workItem from="1530812884026" duration="1388000" />
       <workItem from="1531414199206" duration="1732000" />
-      <workItem from="1533655667008" duration="826000" />
+      <workItem from="1533655667008" duration="1715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22909000" />
+    <option name="totallyTimeSpent" value="23798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="0" width="1628" height="1714" extended-state="0" />
+    <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -276,11 +277,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.099305555" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.054183815" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1246875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -304,7 +305,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Game.java</url>
+          <line>13</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -316,6 +325,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -334,6 +345,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -352,6 +365,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -370,6 +385,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -388,6 +405,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -406,6 +425,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -424,6 +445,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />
@@ -437,11 +460,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        <state relative-caret-position="560">
+          <caret line="75" column="69" lean-forward="false" selection-start-line="75" selection-start-column="69" selection-end-line="75" selection-end-column="69" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Game#0" expanded="false" />
+            <element signature="method#print#0;class#Game#0" expanded="false" />
+            <element signature="method#placeTile#0;class#Game#0" expanded="false" />
             <element signature="method#move#0;class#Game#0" expanded="false" />
             <element signature="method#combine#0;class#Game#0" expanded="false" />
             <element signature="method#checkWin#0;class#Game#0" expanded="false" />

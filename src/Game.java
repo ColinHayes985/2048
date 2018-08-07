@@ -17,12 +17,12 @@ public class Game {
         Scanner s = new Scanner(System.in);
         //TODO:Turn it into a GUI?????????
         while (win==false&&lose==false) {
-            print(grid);
+            int dir=print(grid);
             setOldGrid(grid);
-            char direction = s.next().charAt(0);
-            move(direction, grid);
-            combine(direction, grid);
-            move(direction, grid);
+            char direction =' '; //s.next().charAt(0);
+            move(direction, dir, grid);
+            combine(direction, dir, grid);
+            move(direction, dir, grid);
             if (checkMove(grid) == true) {
                 placeTile(grid);
             }
@@ -34,22 +34,23 @@ public class Game {
     }
 
     //Prints the array for the user to see
-    private static void print(int[][] array) {
+    private static int print(int[][] array) {
         String printableBoard="";
         for (int i = 0; i < 4; i++) {
-            System.out.println("");
+            //System.out.println("");
             printableBoard+='\n';
             printableBoard+='\n';
             for (int j = 0; j < 4; j++) {
-                System.out.format("%04d ", array[i][j]);
+                //System.out.format("%04d ", array[i][j]);
                 printableBoard+=String.format("%04d  ", array[i][j]);
             }
-            System.out.println("");
+            //System.out.println("");
         }
         printableBoard+="\nScore:"+score;
         String[] options={"UP", "DOWN", "LEFT", "RIGHT"};
         int dir = JOptionPane.showOptionDialog(null, printableBoard, "2048",0,0,null,options, null);
         System.out.println("Score:" + score);
+        return dir;
     }
 
     //Places a 2 or 4 in a randomly selected empty spot in the array
@@ -72,9 +73,9 @@ public class Game {
     }
 
     //Shifts array elements in desired direction
-    private static void move(char direction, int[][] array) {
+    private static void move(char direction, int dir, int[][] array) {
         int k = 3;
-        if (direction == 'w' || direction == 'W') {
+        if (dir==0) {
             while (k > 0) {
                 for (int i = 1; i < array.length; i++) {
                     for (int j = 0; j < array[i].length; j++) {
@@ -86,7 +87,7 @@ public class Game {
                 }
                 k--;
             }
-        } else if (direction == 'a' || direction == 'A') {
+        } else if (dir==2) {
             while (k > 0) {
                 for (int i = 0; i < array.length; i++) {
                     for (int j = 1; j < array[i].length; j++) {
@@ -98,7 +99,7 @@ public class Game {
                 }
                 k--;
             }
-        } else if (direction=='s' || direction=='S') {
+        } else if (dir==1) {
             while (k > 0) {
                 for (int i = 2; i >= 0; i--) {
                     for (int j = 0; j < array[i].length; j++) {
@@ -110,7 +111,7 @@ public class Game {
                 }
                 k--;
             }
-        } else if (direction == 'd' || direction=='D') {
+        } else if (dir==3) {
             while (k > 0) {
                 for (int i = 0; i < array.length; i++) {
                     for (int j = 2; j >= 0; j--) {
@@ -126,8 +127,8 @@ public class Game {
     }
 
     //Loops through array to combined like elements next to each other in direction input
-    private static void combine(char direction, int[][] array){
-        if (direction == 'w' || direction == 'W'){
+    private static void combine(char direction, int dir, int[][] array){
+        if (dir==0){
             for (int i = 0; i < 3; i++){
                 for (int j = 0; j < array[i].length; j++){
                     if (array[i][j] == array[i + 1][j]){
@@ -138,7 +139,7 @@ public class Game {
                 }
             }
         }
-        else if (direction == 'a' || direction == 'A'){
+        else if (dir==2){
             for (int j = 0; j < 3; j++){
                 for (int i = 0; i < array.length; i++){
                         if (array[i][j]==array[i][j+1]){
@@ -149,7 +150,7 @@ public class Game {
                 }
             }
         }
-        else if (direction == 's' || direction == 'S'){
+        else if (dir==1){
             for (int i = 3; i > 0; i--){
                 for (int j = 0; j < array[i].length; j++){
                     if (array[i][j] == array[i - 1][j]){
@@ -160,7 +161,7 @@ public class Game {
                 }
             }
         }
-        else if (direction == 'd' || direction == 'D'){
+        else if (dir==3){
             for (int j = 3; j > 0; j--){
                 for (int i = 0; i < array.length; i++){
                     if (array[i][j] == array[i][j - 1]){
